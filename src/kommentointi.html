@@ -1,3 +1,95 @@
-korjaa tyylimääritteet item.module.scss osiossa.
-katso että tekstit menee allekkain nätisti.
-katso tekstien väri, ettei ole liian hailakka.
+<!--
+    Projektin kommentointi:
+    src kansion sisälle luotiin components kansio ja sille alakansio app.
+    Kaikki kansiot ja tiedostot nimetään pienellä alkukirjaimella.
+    Luotiin
+     components kansiolle toinen alakansio item.
+
+    src kansion sisällä components kansio:
+    alakansio app: 
+    import Item from '../item';
+    ../ tarkoittaa, että alakansio app:sta noustaan
+    yksi kansio ylöspäin, components kansioon ja sitä kautta laskeutumalla
+    löytyy items kansio. 
+    
+    src/components/item 
+    item.js
+    aloitetaan kulukirjanpidon yksittäisten merkattujen kulu "itemien" tekeminen.
+    Kirjoitetaan ensin itemiin divit ja niihin kiinteää tekstiä. 
+    Myöhemmin korvataan tekstit.
+
+    Kun tuot tyylittelyn eli scss tai css:n tiedostolle,
+    voit käyttää:
+    import from './plaaplaa.scss';
+    tai
+    import styles from './plaaplaa.scss';
+    alempi tekee pienen ero viittauksiin, silloin 
+    tyylimääritteet on paikallisia.
+    Ei ole tule ongelmia sen kans, että olisi eri tyylimääritteitä
+    nimetty samalla nimellä. Se ei haittaa. Ylemmässä se haittaa.
+
+    item.module.scss sisältää tyylimääret item:ille
+
+    älä tyylittele item:ejä niin kuin opettaja teki. Haluat pitää kuntosalipäiväkirjan
+    sisällä olevat elementit vain allekain, ei kahdessa rivissä.
+
+    luodaan items kansio. ole tarkkana. 
+    kansiot item ja items samannäköiset.
+    Luotiin uusi kansio src alle: assets
+    ja sille alakansio styles.
+    styles alakansioon _config.scss tiedosto.
+    $item-border: #BADDFE;
+    $ tarkoittaa, että se on scss tyylimääre.
+    _config.scss sisältää tyylittelyitä, jotka koskevat item.module.scss:ää
+    tunnistat ne item.module.scss:ssä $ kuvakkeesta.
+
+    Tehtiin header - kansio, sinne tulee headeriin liittyvät tiedot.
+    Muokkaa opettajan kulupito ohjelmaan asettamat tyylit erilaisiksi.
+    Saat helposti oman näköisesi ohjelman:
+    src -> assets/styles -> config.scss 
+
+        header, header.module.scss:ään on kirjattu headeria koskevat
+    tyylimääreet, kyseinen tiedosto vain toteuttaa ne, tyylimääreet on 
+    määritelty oikeasti assets/styles, _config.scss tiedostossa.
+
+    tyylimääreet kytkeytyy aina siihen kyseiseen komponenttiin
+    ja assets/styles, _config.scss:ään.
+    menu, menu.module.scss:
+    display:flex; = menu esillepano peräkkäin/rinnakkain
+    justify-content: space-evenly; = jokaisella sisällön osiolla on saman verran tilaa toisiinsa nähden. 
+    Eli sen alamenun sisältö ei ole peräkkäin kiinni tosisissaan, vaan nätisti jokaisella on tilaa.
+
+         material-ui.com/components/material-icons/
+     sieltä löytyy valmiiksi tehtyjä ladattavissa olevia
+     kuvakkeita, joita voi hyödyntää omassa react sovelluksessa 
+     (react yhteensopivia)
+     ensin pitää kuitenkin lisätä pari pakettia npm:n kautta, ennen kuin se toimii
+     https://www.npmjs.com/package/@material-ui/icons
+     // with npm
+    npm install @material-ui/core
+    Jotta ylläolevan voi asentaa, se vaatii myös on /core:n asentamisen
+
+   1. komentorivillä auki kansio /kulupito
+   2. npm install @material-ui/icons@4.9.1. 
+   (varmistetaan yhteensopivuus lataamalla nimenomaa versio @4.9.1)
+   3. npm install @material-ui/core@4.11.0
+
+   app.js, app.module.scss:
+   height: 100vh;
+   sovellus näytetään ruudun korkeudesta 100%. Eli sovellus on koko ruudun korkeuden kokoinen.
+
+.app > * {
+flex: 1 1 auto;
+}
+app ja kaikki sen alla olevat elementit pyrkivät käyttämään kaiken ilan hyödyksi.
+
+Luotiin kansio "content" ja  app, app.js:ssä
+laitettiin <Content> tägien sisälle <Items/>
+Nyt react näyttää tyhjää, se pitää korjata, jotta <Items> sisältö näkyy sivulla normaalisti taas.
+Se korjaantuu laittamalla content, content.js
+{props.children}
+
+content, content.module.scss
+overflow-y: scroll;
+-> scrollauspalkki ilmestyy.
+-->

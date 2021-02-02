@@ -1,25 +1,45 @@
 //käy läpi värit. 
 //color: #999999; tekee otsikon alla olevat merkinnät haalean värisiksi.
+@import '../../assets/styles/_config.scss';
 .item {
     display: flex;
-    border-bottom: 1px solid #BADDFE;
-    color: #999999;
+    border-bottom: 1px solid $item-border;
+    color: $item-text;
 }
 .item_data {
     flex: 1;
     display: grid;
-    padding: 0.75rem;
+    padding: $item-padding;
 }
 
 //en välttis halua tehdä item_amount/timespan/average siirtoa oikealle.
 //otsikko tummaksi eli treeni. 
 
-.item_treeni, {
+.item_treeni {
     font-weight: bold;
-    color: #000000;
+    color:  $item-text-strong;
 }
 
+.item_edit {
+    max-width: $item-edit-width;
+    min-width: $item-edit-width;
+    background-color: $item-edit-background;
+    color: $item-edit-text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//jos haluat, ettei > -nuoli näy koko ajan.
+//.item_edit -> display:non;
+//.item:hover .item_edit {
+//   display: flex;
+//}
 //flex ei vielä vaikuta mihinkään
 //diplay: ruudukko
 //grid-template-columns: 1 sarake, 1 sarake
 //siis rinnakkain kaks saraketta.
+//ole tarkka tyylittelyissä,
+//_config.scss sisältää tyylittelyitä, jotka on liitetty tänne $ kuvakkeella.
+//.item_type, .item_amount tyylit koskevat osittain item_treeniä. (vrt kulupito ja omapito)
+//helppo tapa muokata ohjelmaa: padding: vaikuttaa eristeeseen, joka on itemien välillä.
