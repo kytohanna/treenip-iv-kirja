@@ -25,16 +25,16 @@
     min-width: $item-edit-width;
     background-color: $item-edit-background;
     color: $item-edit-text;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
-//jos haluat, ettei > -nuoli näy koko ajan.
-//.item_edit -> display:non;
-//.item:hover .item_edit {
-//   display: flex;
-//}
+.item:hover .item_edit {
+    display: flex;
+}
+
+//2.2. tehty huomio
 //flex ei vielä vaikuta mihinkään
 //diplay: ruudukko
 //grid-template-columns: 1 sarake, 1 sarake

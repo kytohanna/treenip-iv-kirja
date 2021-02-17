@@ -92,4 +92,24 @@ Se korjaantuu laittamalla content, content.js
 content, content.module.scss
 overflow-y: scroll;
 -> scrollauspalkki ilmestyy.
+
+
+src kansiolle alakansio shared, sinne komponentteja ja juttuja, joita voi hyödyntää muissakin projekteissa
+ja eivät ole sidottuja pelkästään tähän projektiin.
+shared/uibuttons ->
+sinne tulee komponenttikirjasto
+
+/uibuttons.js:
+//{...props} kaikki propsit tulee mukaan. 
+//export { Button as default, Button } halutaan erikseen määritellä
+//,mitä viedään ulos (export), button ja button erikseen nimettynä.
+
+uibutton.js
+box-shadow: rgba(0,0,0,0.5)
+= buttonilla on varjo, joka on puoleksi läpinäkyvä musta, näyttää paremmalta kuin harmaa.
+
+uibutton.css ,en lisännyt 
+ui.button: hover
+-toimintoa. Kun hiiren veisi napin päälle, sen väri vaihtuisi.
 -->
+
