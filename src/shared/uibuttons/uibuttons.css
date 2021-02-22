@@ -15,3 +15,26 @@
     box-shadow: rgba(0,0,0,0.5) 0px 2px 5px;
 }
 
+
+.uibutton--primary {
+    background-color: #0285ee;
+}
+
+.uibutton--primary:active {
+    background-color: #65b4ff;
+}
+
+.uibutton--secondary {
+    background-color: #ee6c02;
+    color: #fff;
+}
+
+.uibutton--secondary:active {
+    background-color: #ff9b3e;
+}
+
+.uibutton:disabled {
+    background-color: #ccc;
+    color: #999;
+    box-shadow: none;
+}
