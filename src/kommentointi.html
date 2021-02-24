@@ -1,5 +1,18 @@
 <!--
     Projektin kommentointi:
+
+    (Jälkikäteen tehty huomio kansiorakenteesta:
+    src kansion alla on components kansio ja sen sisällä jokainen kansio noudattaa samaa logiikkaa:
+    ne sisältävät kolme tiedostoa: index.js, kansionnimi.js, kansionnimi.module.scss tai kansionnimi.css.
+    jokainen kansio siis sisältää itseään koskevat tyylimääreet. Lisäksi on assets kansion sisällä sivua
+    yleisesti koskevat tyylimääreet _config.scss
+    src/components/shared sisällä on uibuttons kansio. se on pitkä koodi, mutta se sisältää yksinkertaisesti
+    vain sen +napin koodin, (nappi, jolla lisäät uuden rivin kirjanpito-ohjelmaan)
+    src/components/routes sisältää kansiot: items, settings, stats
+    items= kirjanpidon sisältö,
+    settings= asetukset, vähän kryptisen näköinen kansio
+    stats= stats osion jutut )
+
     src kansion sisälle luotiin components kansio ja sille alakansio app.
     Kaikki kansiot ja tiedostot nimetään pienellä alkukirjaimella.
     Luotiin
@@ -131,5 +144,22 @@ uibuttons.css
 tarkoittaa sitä, että tyylimääre tulee tuon sisällä olevalle diville.
 
 npm install react-router-dom@5.2.0
+
+En vieläkään täysin ymmärrä mitä kaikkea routerit tekee, mutta 
+Sen avulla saadaan linkitettyä eri ikonien "takana" olevat sivut. 
+eli kalenterinäkymä (oletussivu), stats, setting.
+
+menu/menu.js
+laitettiin <link> tägien sisälle kaikki
+footer palkissa olevat ikonit. 
+linkityksen johdosta kaikkien ikonien väri muuttui
+violetiksi. Se on automaattinen väri, joka tulee
+linkitetyillä ikoneille.
+
+menu.modules.scss
+.menu a {
+    color: $menu-text;
+}
+
 -->
 
