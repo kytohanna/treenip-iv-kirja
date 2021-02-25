@@ -21,3 +21,14 @@ $menu-height: $header-height;
 
 //menun korkeus on sama kuin headerin korkeus
 //menu text väri muokkaa menun ikonin väriä. 
+
+/* 
+tämä tiedosto pitää sisällään yleiset tyylimääreet, jotka koskevat koko sovellusta.
+Jokaista yksittäistä sovelluksen osaa koskevat omat tyylimääreet ovat jokaisen osan 
+omassa kansiossa.
+Jokainen kansio noudattaa samaa logiikkaa.
+Kaikki sovelluksen osat ovat components- kansion alla omissa kansioissa.
+Jokaisessa kansiossa on samat tiedostot:
+nimi.js (sisältää sisällön)
+index.js 
+kansionnimi.module.scss tai kansionnimi.css (sisältää tyylit)*/

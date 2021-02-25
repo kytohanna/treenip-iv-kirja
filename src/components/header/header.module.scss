@@ -1,7 +1,5 @@
 @import '../../assets/styles/_config.scss';
 
-//tämä vain toteuttaa tyylit hederille, jotka on ilmoitettu
-//tuolla importatussa tiedostossa
 .header {
     background-color: $header-background;
     color: $header-text;
@@ -12,3 +10,6 @@
     justify-content: center;
     align-items: center;
 }
+
+//tämä tiedosto vain toteuttaa tyylit hederille, jotka on ilmoitettu
+//tuolla importatussa tiedostossa

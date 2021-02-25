@@ -1,5 +1,3 @@
-//käy läpi värit. 
-//color: #999999; tekee otsikon alla olevat merkinnät haalean värisiksi.
 @import '../../assets/styles/_config.scss';
 .item {
     display: flex;
@@ -12,8 +10,7 @@
     padding: $item-padding;
 }
 
-//en välttis halua tehdä item_amount/timespan/average siirtoa oikealle.
-//otsikko tummaksi eli treeni. 
+//en tee item_amount/timespan/average siirtoa oikealle, niin kuin "kulupito"-ohjelmassa on tehty". 
 
 .item_treeni {
     font-weight: bold;
@@ -34,6 +31,12 @@
     display: flex;
 }
 
+/*
+Tässä tiedostossa on itemien eli kirjanpidon yksittäisiä "tuotteita" koskevat tyylittelyt.
+Ne koskevat mm. itemien fontin paksuutta, itemien leveyttä, väriä, paddingiä (reunus,täyte), 
+sekä niiden sijoittelua sovelluksessa. Englannin kieliset nimet kertovat aika suoraan mistä on kyse.
+color= väri, align-items = tuotteiden sijoitus, jne. */
+
 //2.2. tehty huomio
 //flex ei vielä vaikuta mihinkään
 //diplay: ruudukko
@@ -43,3 +46,5 @@
 //_config.scss sisältää tyylittelyitä, jotka on liitetty tänne $ kuvakkeella.
 //.item_type, .item_amount tyylit koskevat osittain item_treeniä. (vrt kulupito ja omapito)
 //helppo tapa muokata ohjelmaa: padding: vaikuttaa eristeeseen, joka on itemien välillä.
+
+

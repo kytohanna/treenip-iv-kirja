@@ -10,3 +10,12 @@
     align-items: center;
 }
 
+.menu a {
+    color: $menu-text;
+}
+
+/*menu a muokkaa ikonien värin violetista valkoiseksi.
+Kun reititys pistettiin sivujen välille, siitä johtuen tuli automaattiseksi ikonien väriksi
+violetti, nyt tuolla yllä olevalla .menu a jutulla se on korjattu.
+$ tarkoittaa, että tyylimääre tulee toisesta scss tiedostosta, jossa
+menu-text väri on määritelty ja käytämme samaa väriä nyt ikoneillekin. */

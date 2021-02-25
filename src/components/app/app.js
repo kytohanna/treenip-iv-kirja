@@ -7,6 +7,7 @@ import Stats from '../../routes/stats';
 import Settings from '../../routes/settings';
 import Menu from '../menu';
 import { ButtonAppContainer } from '../../shared/uibuttons';
+import testdata from '../../testdata.js';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
        <Header />
         <Content>
          <Route exact path="/">
-          <Items />
+          <Items data={testdata}/>
          </Route>
          <Route path="/stats">
             <Stats/>
@@ -31,5 +32,11 @@ function App() {
     </ButtonAppContainer>
   );
 }
+
+/*kaikki sovelluksen osat kootaan tänne. Ja ne näkyvät sovelluksessa tässä järjestyksessä.
+Kaikki sovelluksen osat on ensin importattu tänne ja sitten ne on merkattu function App - sisälle
+haluttuun järjestykseen.
+muokkaamalla app.js voit muokata layout järjestystä. */
+
 //OO TARKKANA. KATSO ONKO KAIKKI REITITYKSET OIKEIN. '../../routes/Items' TUOTTI PÄÄN VAIVAA
 export default App;

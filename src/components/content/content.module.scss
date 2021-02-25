@@ -18,3 +18,13 @@
 ::-webkit-scrollbar-thumb {
     background: $scrollbar-thumb;
 }
+
+/* 
+Tämä on taas yksi .scss tiedosto, joka antaa tyylimääreet vain oman kansionsa sisällölle.
+Nämä tyylimääreet koskevat sovelluksen rullauspalkkia. scrollbar. 
+nämä määrittelee kuinka leveä se on, miten se toimii (scroll, touch) yms
+:: - liittyi johonkin hassuun ominaisuuteen. Googlaamalla löytyy varmasti lisää. 
+tuota "::"-merkkiä näkee vain tässä tiedostossa. 
+Minusta on jännitävä huomio, ettei tyylimääreitä exportata. 
+Kaikki kansionnimi.js tiedostot exportataan aina.
+ */
