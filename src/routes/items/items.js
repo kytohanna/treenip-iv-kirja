@@ -2,8 +2,8 @@ import Item from '../../components/item';
 import { FloatingButton, ButtonContainer } from '../../shared/uibuttons';
 
 function Items(props) {
-
-    const items = props.data.map((item) => <Item data={item} />);
+//key={item.id}, jotta ohjelma ei valita turhasta.
+    const items = props.data.map((item) => <Item key={item.id} data={item} />);
     
     return (
         <ButtonContainer>

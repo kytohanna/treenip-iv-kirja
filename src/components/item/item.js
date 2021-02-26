@@ -10,6 +10,9 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
         //styles.item_data on sama kuin "Kulupito"-esimerkissä
         
 function Item(props) {
+
+//katso tarvitsetko noita const-juttuja omapidon puolella
+
     return (
         <div className={styles.item}>
             <div className={styles.item_data}>
