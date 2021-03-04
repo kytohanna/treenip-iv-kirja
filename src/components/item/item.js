@@ -11,13 +11,15 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
         
 function Item(props) {
 
-//katso tarvitsetko noita const-juttuja omapidon puolella
+//alla olevat 2x const mahdollistaa kalenteri muodon pvm valinnalle
+const locale = "fi-FI";
+const kuntosaliDate = new Date(props.data.treeniDate).toLocaleDateString(locale);
 
     return (
         <div className={styles.item}>
             <div className={styles.item_data}>
                 <div className={styles.item_treeni}>{props.data.type}</div>
-                <div className={styles.item_pvm}>{props.data.treeniDate}</div>
+                <div className={styles.item_pvm}>{kuntosaliDate}</div>
                 <div className={styles.item_liike1}>{props.data.liike1}</div>
                 <div className={styles.item_liike2}>{props.data.liike2}</div>
                 <div className={styles.item_liike3}>{props.data.liike3}</div>
