@@ -2,18 +2,25 @@ import styles from './itemform.module.scss';
 import Button from '../../shared/uibuttons';
 import useForm from '../../shared/useform';
 import { useHistory } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
-
+//submit = alert submit ja paluu takaisin etusivulle.
 function ItemForm(props) {
 
    const history = useHistory();
+   //stored.values.id , jos itemillä id, niin ok, muuten se luo sille uuden.
 
    const submit= () => {
-      alert("SUBMIT!");
+      let storedvalues = Object.assign({}, values);
+      storedvalues.amount = parseFloat(storedvalues.amount);
+      storedvalues.id = storedvalues.id ? storedvalues.id : uuidv4();
+      props.onItemSubmit(storedvalues);
       history.push("/");
    }
+
 //aloitustilanne lomakkeelle = tyhjä lomake:
-   const initialState = {
+//props.data ? , jos se on määritelty, sitä käytetään, muuten tyhjä.
+   const initialState = props.data ? props.data : {
       type: "",
       kuntosaliDate: "",
       liike1: "",
@@ -25,6 +32,7 @@ function ItemForm(props) {
       liike7: "",
       treeniPause: "",
    }
+
    //false = ei resetoida lomaketta
    const {values,handleChange, handleSubmit} = useForm(submit, initialState, false);
    //handleCancel = peruuta lomake submit - nappi
@@ -33,6 +41,14 @@ function ItemForm(props) {
       history.goBack();
    }
 
+   const handleDelete = (event) => {
+      event.preventDefault();
+      props.onItemDelete(values.id);
+      history.push("/");
+   }
+
+/*treenityypin kohdalla tapahtuisi muutoksia, mutta ei ole valikko-ominaisuutta,kuten kulupidossa
+joten se ei koske omapitoa. */
     return (
      <div>
         <form onSubmit={handleSubmit}>
@@ -104,9 +120,16 @@ function ItemForm(props) {
                     <Button onClick={handleCancel}>PERUUTA</Button>
                  </div>
                  <div>
-                    <Button primary type="submit">LISÄÄ</Button>
+                    <Button primary type="submit">{props.data ? "TALLENNA": "LISÄÄ" }</Button>
                  </div>
                </div>
+
+               <div className={styles.form_row}>
+                  <div>
+                     <Button onClick={handleDelete}>POISTA</Button>
+                  </div>
+                  <div></div>
+                </div>
            </div>
         </form> 
      </div>
@@ -114,4 +137,15 @@ function ItemForm(props) {
 }
 /*htmlFor nimet on samat kuin muuttujissa. 
 TODELLA TÄRKEÄÄ NIMETÄ OIKEIN. MYÖHEM. ONGELMIA MUUTEN!!!!*/
+
+/*Jos tekisit lomakkeeseen option ominaisuuden <input>:iin. On tärkeä olla 
+myös value="asiannimi". Katso mallia kulupito valikon vesi, sähkö - vaihtoehdoista.
+props.data ? "TALLENNA": "LISÄÄ"
+-> jos on props.data, niin tulee eka teksti näkyviin, muuten jälkim.
+Button handleCancel, se on peruuta-nappi. Jos olet kirjoittamassa uutta merkintää treenikirjaan
+ja et haluakaan laittaa sitä, painat peruuta-nappia.
+Button handleDelete, nappi jolla poistat olemassa olevan merkinnän
+Button handleCancelin alla on ylimääräiset <div></div> merkinnät,
+sen ansiosta nappi ei ole koko ruudun levyinen vaan sellainen kaunis.
+puolikkaan ruuudun pituinen (kts ohjelma niin tajuat)*/
 export default ItemForm;

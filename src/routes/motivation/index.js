@@ -1,4 +1,4 @@
-export { default } from './settings.js';
+export { default } from './motivation.js';
 
 /*
 Jokaisella components kansion alakansiolla on oma index.js

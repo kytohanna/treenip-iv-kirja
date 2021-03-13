@@ -1,0 +1,27 @@
+@import '../../assets/styles/_config.scss';
+
+.motivation {
+    padding: $container-padding;
+}
+
+.motivation h3 {
+    margin-top: 0.5rem;
+}
+
+.motivation_type {
+    padding: 0.5rem;
+    font-size: 1.1rem;
+}
+
+//vähän välhjempi tila diveillä
+.motivation_types > div {
+    padding: 0.3rem;
+    border-radius: 0.2rem;
+}
+
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100px;
+  }

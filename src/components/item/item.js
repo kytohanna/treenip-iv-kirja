@@ -1,5 +1,6 @@
 import styles from './item.module.scss';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import { Link } from 'react-router-dom';
 
         //huomaa ero kulupito layouttiin.huom styles.
         //styles.item_data tuo tyylimääritelmät nyt.
@@ -12,6 +13,7 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 function Item(props) {
 
 //alla olevat 2x const mahdollistaa kalenteri muodon pvm valinnalle
+//ONKO TOI TREENIDATE OIKEA JUTTU?
 const locale = "fi-FI";
 const kuntosaliDate = new Date(props.data.treeniDate).toLocaleDateString(locale);
 
@@ -30,7 +32,7 @@ const kuntosaliDate = new Date(props.data.treeniDate).toLocaleDateString(locale)
                 <div className={styles.item_tauko}>{props.data.treeniPause}</div>
             </div>
              <div className={styles.item_edit}>
-                <NavigateNextIcon />
+               <Link to={"/edit/"+props.data.id}>< NavigateNextIcon /></Link>
              </div>
         </div>
           
