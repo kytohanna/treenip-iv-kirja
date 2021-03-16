@@ -1,14 +1,14 @@
 import styles from './motivation.module.scss';
 
 //FIKSAA TOI KUVA ET SE OIKEASTI NÄKYISI TUOLLA SIVULLA"!!!
+
 function Motivation(props) {
     return (
         <div className={styles.motivation}>
             <h2>Motivaatio kuva</h2>
             <h3>Arnold Swarchenegger</h3>
-             <div>
-                <img src="arnold.motivation.jpg" alt="Kuva ei näy, senkin pässi"/>
-              </div>
+             <p>KAIVA KUVAN LAITTO OHJEET BURGERCLICKERISTÄ</p>
+              
         </div>
     )
 }

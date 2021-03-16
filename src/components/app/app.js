@@ -4,7 +4,7 @@ import styles from './app.module.scss';
 import Header from '../header';
 import Content from '../content';
 import Items from '../../routes/items';
-import Stats from '../../routes/stats';
+import TreeniOhj from '../../routes/treeniohj';
 import Motivation from '../../routes/motivation';
 import AddItem from '../../routes/additem';
 import EditItem from '../../routes/edititem';
@@ -61,8 +61,8 @@ ei haluta poistaa
          <Route exact path="/">
           <Items data={data}/>
          </Route>
-         <Route path="/stats">
-            <Stats/>
+         <Route path="/treeniohj">
+            <TreeniOhj/>
           </Route>
           <Route path="/motivation">
             <Motivation />
@@ -85,6 +85,9 @@ ei haluta poistaa
 Kaikki sovelluksen osat on ensin importattu tänne ja sitten ne on merkattu function App - sisälle
 haluttuun järjestykseen.
 muokkaamalla app.js voit muokata layout järjestystä. */
+
+//settings = motivation
+//stats = treeniohj
 
 //OO TARKKANA. KATSO ONKO KAIKKI REITITYKSET OIKEIN. '../../routes/Items' TUOTTI PÄÄN VAIVAA
 export default App;

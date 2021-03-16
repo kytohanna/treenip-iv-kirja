@@ -1,4 +1,4 @@
-export {default } from './stats.js';
+export {default } from './treeniohj.js';
 
 /*
 Jokaisella components kansion alakansiolla on oma index.js
