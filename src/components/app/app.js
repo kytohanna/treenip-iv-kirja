@@ -1,5 +1,13 @@
+/*import tuo jotain muualta tähän tiedostoon.
+import voi tuoda toisista tämän ohjelman kansioista tai tätä ohjelmaa 
+varten ladatuista lisäosista/kirjastoista ominaisuuksia. */
+//../ = yksi kansio ylöspäin
+//../../ = kaksi kansiota ylöspäin
+// /= kansio, esim /routes = routes kansio.
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { useFirestore, useFirestoreCollectionData } from 'reactfire';
+import 'firebase/firestore';
 import styles from './app.module.scss';
 import Header from '../header';
 import Content from '../content';
@@ -11,43 +19,61 @@ import EditItem from '../../routes/edititem';
 import Menu from '../menu';
 import { ButtonAppContainer } from '../../shared/uibuttons';
 import testdata from '../../testdata.js';
-//useEffect on efekti joka tapahtuu tietyssä tilanteessa
+
 //kulupidossa tänne tehtiin muokkauksia,et tarvii niitä, sulla ei ole valikkoa sun ohjelmassa.
+//function App sisältää kaiken appiin liittyvän
+//jokaisessa kansionnimi.js tiedostossa on saman niminen function, joka sisältää kaiken olennaisen.
 function App() {
 
   const [data, setData] = useState([]);
-  
+
+  const itemCollectionRef = useFirestore().collection('item');
+  const { data: itemCollection } = useFirestoreCollectionData(itemCollectionRef.orderBy("treeniDate","desc"), {initialData: [], idfield: "id"});
+
+  //HALUTAANKO ALLAOLEVAA? EI OLE TYYPPEJÄ OMAPIDOSSA????
+  //OO VAROVAINEN KAIKKIEN "TYPE"- JUTTUJEN KANSSA: EI OLE TYYPPEJÄ OMAPIDOSSA
+  const typeCollectionRef = useFirestore().collection('type');
+  const { data: typeCollection } = useFirestoreCollectionData(typeCollectionRef.orderBy("type"), { initialData: []});
+
+
+//useEffect on efekti joka tapahtuu tietyssä tilanteessa
   useEffect(() => {
-    setData(testdata);
-  }, []);
+    setData(itemCollection)
+  }, [itemCollection]);
+
+  //nimensä mukaisesti hoitaa uuden kirjanpito merkinnän luomisen, eli submittauksen.
+  //jokainen submittaus luo uuden itemin eli merkinnän kirjanpitoon, 
+  //jokaiselle itemille luodaan id, jotta sen tunnistaa omaksi yksilökseen.
+  
+    /*data.slice, kirjanpidon tiedoista tehdään identtinen kopio taulukkona
+storeddata... rivi. filteröidään pois taulukosta ne merkinnät,joita 
+ei haluta poistaa
+!== on erisuuri merkki*/
+//tämä hoitaa itemin eli merkinnän poistamisen.
+
+const handleItemDelete = (id) => {
+  itemCollectionRef.doc(id).delete();
+  /*
+  let storeddata = data.slice();
+  storeddata = storeddata.filter(item => item.id !== id)
+  setData(storeddata);
+  */
+}
 
   const handleItemSubmit = (newitem) => {
+    //tämä korvaa ennen olleen pitkän rimpsun koodia:
+    itemCollectionRef.doc(newitem.id).set(newitem);
+    /* ---------------------------------------
     let storeddata = data.slice();
     const index = storeddata.findIndex(item => item.id === newitem.id);
     if (index >= 0 ) {
       storeddata[index] = newitem;
     } else {
       storeddata.push(newitem);
-    }
-//alla oleva lajittelee kirjanpito merkinnät uusimmasta vanhimpaan. uusin tulee ylimmäksi.
-//paymentDate = kuntosaliDate
-    storeddata.sort( (a,b) => {
-       const aDate = new Date(a.kuntosaliDate);
-       const bDate = new Date(b.kuntosaliDate);
-       return bDate.getTime() - aDate.getTime();
-    } );
+    } */
 
-    setData(storeddata);
-  }
-/*data.slice, kirjanpidon tiedoista tehdään identtinen kopio taulukkona
-storeddata... rivi. filteröidään pois taulukosta ne merkinnät,joita 
-ei haluta poistaa
-!== on erisuuri merkki*/
-  const handleItemDelete = (id) => {
-    let storeddata = data.slice();
-    storeddata = storeddata.filter(item => item.id !== id)
-    setData(storeddata);
-  }
+  } 
+
 
 //tännekin pieniä muokkauksia kulupidossa, omapidossa ei tarvitse.
 //alla oleva pitää sisällään ohjelman rungon. Siis sen missä järjestyksessä kaikki on.
@@ -84,10 +110,9 @@ ei haluta poistaa
 /*kaikki sovelluksen osat kootaan tänne. Ja ne näkyvät sovelluksessa tässä järjestyksessä.
 Kaikki sovelluksen osat on ensin importattu tänne ja sitten ne on merkattu function App - sisälle
 haluttuun järjestykseen.
-muokkaamalla app.js voit muokata layout järjestystä. */
+muokkaamalla app.js return -osiota, voit muokata layout järjestystä. */
 
 //settings = motivation
 //stats = treeniohj
 
-//OO TARKKANA. KATSO ONKO KAIKKI REITITYKSET OIKEIN. '../../routes/Items' TUOTTI PÄÄN VAIVAA
 export default App;
