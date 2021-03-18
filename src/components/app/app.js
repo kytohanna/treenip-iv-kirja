@@ -18,7 +18,7 @@ import AddItem from '../../routes/additem';
 import EditItem from '../../routes/edititem';
 import Menu from '../menu';
 import { ButtonAppContainer } from '../../shared/uibuttons';
-import testdata from '../../testdata.js';
+// import testdata from '../../testdata.js';
 
 //kulupidossa tänne tehtiin muokkauksia,et tarvii niitä, sulla ei ole valikkoa sun ohjelmassa.
 //function App sisältää kaiken appiin liittyvän
@@ -30,7 +30,7 @@ function App() {
   const itemCollectionRef = useFirestore().collection('item');
   const { data: itemCollection } = useFirestoreCollectionData(itemCollectionRef.orderBy("treeniDate","desc"), {initialData: [], idfield: "id"});
 
-  //HALUTAANKO ALLAOLEVAA? EI OLE TYYPPEJÄ OMAPIDOSSA????
+  //TARVIINKO ALLAOLEVAA? EI OLE TYYPPEJÄ OMAPIDOSSA????
   //OO VAROVAINEN KAIKKIEN "TYPE"- JUTTUJEN KANSSA: EI OLE TYYPPEJÄ OMAPIDOSSA
   //const typeCollectionRef = useFirestore().collection('type');
   //const { data: typeCollection } = useFirestoreCollectionData(typeCollectionRef.orderBy("type"), { initialData: []});

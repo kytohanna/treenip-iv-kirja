@@ -1,14 +1,6 @@
 import styles from './item.module.scss';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { Link } from 'react-router-dom';
-
-        //huomaa ero kulupito layouttiin.huom styles.
-        //styles.item_data tuo tyylimääritelmät nyt.
-        //classname auttaa yksilöimään tyylittelyt.
-        //ole tarkkana item nimien eroissa vrt kulupito.
-        //muista laittaa nimi joka paikkaan missä opettaja käyttää sitä.
-        //styles.item on sama
-        //styles.item_data on sama kuin "Kulupito"-esimerkissä
         
 function Item(props) {
 
@@ -38,6 +30,14 @@ const kuntosaliDate = new Date(props.data.treeniDate).toLocaleDateString(locale)
           
     );
 }
+
+        //huomaa ero kulupito layouttiin.huom styles.
+        //styles.item_data tuo tyylimääritelmät nyt.
+        //classname auttaa yksilöimään tyylittelyt.
+        //ole tarkkana item nimien eroissa vrt kulupito.
+        //muista laittaa nimi joka paikkaan missä opettaja käyttää sitä.
+        //styles.item on sama
+        //styles.item_data on sama kuin "Kulupito"-esimerkissä
 
 /*item.js tiedosto pitää sisällään kirjanpidon yksittäisten merkkausten sisältämät tiedot.
 Ensin tulee merkinnän nimi, pvm, sitten treeniliikkeet 1-7 ja tauon pituus.

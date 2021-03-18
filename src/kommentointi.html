@@ -179,5 +179,99 @@ npm install reactfire@3.0.0-rc.0
 Firebase on hyvä paikka pistää ohjelmasi talteen.
 firebase:
 npm install firebase@8.2.4
+
+
+Julkaisun alustaminen:
+Katso tuolta esimerkiksi kiva ikoni nettisivullesi.
+Se on sovelluskuvakkeesi. Jos avaat sovelluksen selaimeen,
+näkyy välilehdessä nimen vieressä valitsemasi pikku kuva.
+
+https://www.pngrepo.com/svg/28744/wallet
+
+Tämä luo valitsemastasi kuvasta ikonin, eli oikeasti tekee sen työn.
+Saat valita ikonin ulkoasun esim app storessa jne.
+
+https://realfavicongenerator.net/
+
+android teemaväri:
+valitse headerin väri, katso _config.scss
+
+download favicon package.
+
+katso public kansion:
+manifest.json
+siihen löytyy tarvittavat muokkaukset ladatusta
+favicon paketista:
+"site.webmanifest".
+Avaa se visual studio codesta ja kopioi kaikki 
+"icons" tyylimääreet sieltä.
+Kopioi theme ja background-color 
+site.webmanifest -> manifest.json:iin.
+
+____________________________________-
+TEE TÄMÄ OMAPIDOLLE: 
+------------------------------------------
+Julkaiseminen:
+npm run build
+
+Reactin sivuilta löytyy suoraan ohjeistus sovelluksen julkaisemiseen.
+Sitä kannattaa seurata.
+
+julkaisua varten: (globaalisti, tää toimii omapidossakin,
+ei tarvitse enää uudelleen asentaa. )
+npm install -g firebase-tools
+
+firebase login 
+(anna oikeudet virhereportteja varten)
+
+alustaa firebasen käytön:
+firebase init 
+
+(you're about to initialize a firebase....
+are you reade to proceed?:)
+Yes
+valikko:
+(nuolinäppäin ja space)
+valitse firestore
+valitse hosting
+
+(please select an option:)
+valitse:
+use an existing project
+
+(choose the right one:)
+valikko:
+valitse omapito
+
+(minne säännöt pistetään:)
+oletuskansio
+
+(minne indexit?:)
+oletus
+
+(public directory?:)
+build
+
+(single page app?)
+yes
+
+(automatic build and deploy with github?:)
+no
+
+(build/index.html already exists, overwrite?:)
+no
+-------------
+komento:
+vie nykyisen ohjelman firebaseen:
+
+firerbase deploy
+
+Näet ruudulla uuden wwww. osoitteen ohjelmallesi.
+Voi mennä ihmettelemään sitä sieltä.
+
+
+
+
+
 -->
 

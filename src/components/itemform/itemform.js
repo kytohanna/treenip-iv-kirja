@@ -22,7 +22,7 @@ function ItemForm(props) {
 //props.data ? , jos se on määritelty, sitä käytetään, muuten tyhjä.
    const initialState = props.data ? props.data : {
       type: "",
-      kuntosaliDate: "",
+      kuntosaliDate: new Date().toISOString().substring(0,10),
       liike1: "",
       liike2: "",
       liike3: "",
@@ -57,13 +57,13 @@ joten se ei koske omapitoa. */
              <div className={styles.form_row}>
                  <div>
                      <label htmlFor="type">Treeni tyyppi </label>
-                     <input type="text" name="type" onChange={handleChange} value={values.type} />
+                     <input type="text" name="type" onChange={handleChange} value={values.type} required/>
                  </div>
              </div>
              <div className={styles.form_row}>
                  <div>
                     <label htmlFor="kuntosaliDate">Päivämäärä </label>
-                    <input type="date" name="kuntosaliDate" onChange={handleChange} value={values.kuntosaliDate} />
+                    <input type="date" name="kuntosaliDate" onChange={handleChange} value={values.kuntosaliDate}/>
                  </div>
              <div className={styles.form_row}>
                  <div>

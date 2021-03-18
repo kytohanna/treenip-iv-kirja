@@ -35,12 +35,12 @@ function TreeniOhj(props) {
 }
 
 
-//Vaihda statsien nimi.
+
 //stats= treeniohj
 //function Stats = function TreeniOhj
 //stats.js = treeniohj.
 //stats.module.scss = treeniohj.module.scss
-//TEE STATSEILLE JOTAIN HAUSKAA.
+
 
 /*
 Kirjoita ylös vaikka treeniohjelma 
