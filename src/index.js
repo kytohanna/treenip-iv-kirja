@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app';
 import reportWebVitals from './reportWebVitals';
-import { FirebaseAppProvider } from 'reactfire';
+import { FirebaseAppProvider} from 'reactfire';
+
 
 /*alla oleva const sisältää yksilöidyn tunnisteen,
 alla olevan const ansiosta firebase toimii kuten kuuluukin.
@@ -23,7 +24,7 @@ const firebaseConfig = {
 ReactDOM.render(
   <React.StrictMode>
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <App />
+         <App />
     </FirebaseAppProvider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -32,8 +32,8 @@ function App() {
 
   //HALUTAANKO ALLAOLEVAA? EI OLE TYYPPEJÄ OMAPIDOSSA????
   //OO VAROVAINEN KAIKKIEN "TYPE"- JUTTUJEN KANSSA: EI OLE TYYPPEJÄ OMAPIDOSSA
-  const typeCollectionRef = useFirestore().collection('type');
-  const { data: typeCollection } = useFirestoreCollectionData(typeCollectionRef.orderBy("type"), { initialData: []});
+  //const typeCollectionRef = useFirestore().collection('type');
+  //const { data: typeCollection } = useFirestoreCollectionData(typeCollectionRef.orderBy("type"), { initialData: []});
 
 
 //useEffect on efekti joka tapahtuu tietyssä tilanteessa
@@ -49,20 +49,12 @@ function App() {
 storeddata... rivi. filteröidään pois taulukosta ne merkinnät,joita 
 ei haluta poistaa
 !== on erisuuri merkki*/
-//tämä hoitaa itemin eli merkinnän poistamisen.
 
-const handleItemDelete = (id) => {
-  itemCollectionRef.doc(id).delete();
-  /*
-  let storeddata = data.slice();
-  storeddata = storeddata.filter(item => item.id !== id)
-  setData(storeddata);
-  */
-}
 
   const handleItemSubmit = (newitem) => {
     //tämä korvaa ennen olleen pitkän rimpsun koodia:
     itemCollectionRef.doc(newitem.id).set(newitem);
+  
     /* ---------------------------------------
     let storeddata = data.slice();
     const index = storeddata.findIndex(item => item.id === newitem.id);
@@ -73,6 +65,15 @@ const handleItemDelete = (id) => {
     } */
 
   } 
+
+  const handleItemDelete = (id) => {
+    itemCollectionRef.doc(id).delete();
+    /*
+    let storeddata = data.slice();
+    storeddata = storeddata.filter(item => item.id !== id)
+    setData(storeddata);
+    */
+  }
 
 
 //tännekin pieniä muokkauksia kulupidossa, omapidossa ei tarvitse.
@@ -88,7 +89,7 @@ const handleItemDelete = (id) => {
           <Items data={data}/>
          </Route>
          <Route path="/treeniohj">
-            <TreeniOhj/>
+            <TreeniOhj data={data}/>
           </Route>
           <Route path="/motivation">
             <Motivation />
@@ -106,6 +107,8 @@ const handleItemDelete = (id) => {
     </ButtonAppContainer>
   );
 }
+
+//TARVITSEEKO TREENIOHJ data={data} ??? 
 
 /*kaikki sovelluksen osat kootaan tänne. Ja ne näkyvät sovelluksessa tässä järjestyksessä.
 Kaikki sovelluksen osat on ensin importattu tänne ja sitten ne on merkattu function App - sisälle

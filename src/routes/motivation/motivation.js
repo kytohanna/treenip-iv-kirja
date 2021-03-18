@@ -8,6 +8,7 @@ function Motivation(props) {
             <h2>Motivaatio kuva</h2>
             <h3>Arnold Swarchenegger</h3>
              <p>KAIVA KUVAN LAITTO OHJEET BURGERCLICKERISTÄ</p>
+             <div><img src="./motivation/arnold.motivation.jpg" alt="" /></div>
               
         </div>
     )

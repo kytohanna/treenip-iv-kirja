@@ -8,7 +8,6 @@ function EditItem(props) {
     const index = props.data.findIndex(item => item.id === id);
     let item = props.data[index];
 
-
     return (
     <div className={styles.edititem}>
       <h2>Merkinnän muokkaaminen</h2>
