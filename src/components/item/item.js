@@ -6,8 +6,9 @@ function Item(props) {
 
 //alla olevat 2x const mahdollistaa kalenteri muodon pvm valinnalle
 //ONKO TOI TREENIDATE OIKEA JUTTU?
+//kuntosaliDate PISTÄ TOI KAIKKIALLE.
 const locale = "fi-FI";
-const kuntosaliDate = new Date(props.data.treeniDate).toLocaleDateString(locale);
+const kuntosaliDate = new Date(props.data.kuntosaliDate).toLocaleDateString(locale);
 
     return (
         <div className={styles.item}>

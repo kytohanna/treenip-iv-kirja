@@ -28,7 +28,7 @@ function App() {
   const [data, setData] = useState([]);
 
   const itemCollectionRef = useFirestore().collection('item');
-  const { data: itemCollection } = useFirestoreCollectionData(itemCollectionRef.orderBy("treeniDate","desc"), {initialData: [], idfield: "id"});
+  const { data: itemCollection } = useFirestoreCollectionData(itemCollectionRef.orderBy("kuntosaliDate","desc"), {initialData: [], idfield: "id"});
 
   //TARVIINKO ALLAOLEVAA? EI OLE TYYPPEJÄ OMAPIDOSSA????
   //OO VAROVAINEN KAIKKIEN "TYPE"- JUTTUJEN KANSSA: EI OLE TYYPPEJÄ OMAPIDOSSA
@@ -89,7 +89,7 @@ ei haluta poistaa
           <Items data={data}/>
          </Route>
          <Route path="/treeniohj">
-            <TreeniOhj data={data}/>
+            <TreeniOhj/>
           </Route>
           <Route path="/motivation">
             <Motivation />

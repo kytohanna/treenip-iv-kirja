@@ -15,7 +15,14 @@
     
     hyödyllisiä linkkejä/juttuja:
     vilkaise koodia ja sen ongelmia chromen developer consolista)
-
+-----------------------------------------------------------------------------------------
+ALUKSI TEIN KOODAUKSEN AIKANA HUOMIOITA, JOTKA KIRJOITIN TÄNNE. SEASSA ON VINKKEJÄ JA TIPPEJÄ JA HUOMIOITA
+OPETTAJAN KÄYTTÄMISTÄ NIKSEISTÄ. 
+MYÖHEMMIN SIIRRYIN TEKEMÄÄN VAIN KOMMENTTEJA KOODIN SEKAAN.
+KOODIN SEASSA ON VAIN KYSEISTÄ KOODIA KOSKEVAT KOMMENTIT.
+TÄÄLLÄ ON MYÖS YLEISIÄ OHJEITA JA NIKSEJÄ.
+LISÄKSI OLEN MERKANNUT TÄNNE KAIKKI LADATUT PAKETIT, KIRJASTOT,  JNE.
+-----------------------------------------------------------------------------------------------
     src kansion sisälle luotiin components kansio ja sille alakansio app.
     Kaikki kansiot ja tiedostot nimetään pienellä alkukirjaimella.
     Luotiin
@@ -75,6 +82,7 @@
     justify-content: space-evenly; = jokaisella sisällön osiolla on saman verran tilaa toisiinsa nähden. 
     Eli sen alamenun sisältö ei ole peräkkäin kiinni tosisissaan, vaan nätisti jokaisella on tilaa.
 
+    ------------------------------------------------------------------------------
          material-ui.com/components/material-icons/
      sieltä löytyy valmiiksi tehtyjä ladattavissa olevia
      kuvakkeita, joita voi hyödyntää omassa react sovelluksessa 
@@ -89,7 +97,7 @@
    2. npm install @material-ui/icons@4.9.1. 
    (varmistetaan yhteensopivuus lataamalla nimenomaa versio @4.9.1)
    3. npm install @material-ui/core@4.11.0
-
+--------------------------------------------------------------------------------------
    app.js, app.module.scss:
    height: 100vh;
    sovellus näytetään ruudun korkeudesta 100%. Eli sovellus on koko ruudun korkeuden kokoinen.
@@ -145,13 +153,13 @@ uibuttons.css
 }
 
 tarkoittaa sitä, että tyylimääre tulee tuon sisällä olevalle diville.
-
+----------------------------------------------------------------------------
 npm install react-router-dom@5.2.0
 
 En vieläkään täysin ymmärrä mitä kaikkea routerit tekee, mutta 
 Sen avulla saadaan linkitettyä eri ikonien "takana" olevat sivut. 
 eli kalenterinäkymä (oletussivu), stats, setting.
-
+--------------------------------------------------------------------------------
 menu/menu.js
 laitettiin <link> tägien sisälle kaikki
 footer palkissa olevat ikonit. 
@@ -167,19 +175,19 @@ menu.modules.scss
 src/testdata.js
 sisältää tiedot yksittäisistä merkinnöistä, kirjanpito-ohjelmassa
 vrt. katso item.js, jossa on myös yksittäiset merkinnät.
-
+-----------------------------------------------------------
 npm install uuid@8.3.2
 MIETI HALUAISITKO SITTENKIN TREENI TYYPILLE VALIKON???? 
 muokkaukset tapahtui: app.js, itemform, edititem
-
+-------------------------------------------------------------
 firebase liittyen:
 reactfire 
 npm install reactfire@3.0.0-rc.0
-
+----------------------------------------------------------------
 Firebase on hyvä paikka pistää ohjelmasi talteen.
 firebase:
 npm install firebase@8.2.4
-
+-----------------------------------------------------------------
 
 Julkaisun alustaminen:
 Katso tuolta esimerkiksi kiva ikoni nettisivullesi.
@@ -187,7 +195,7 @@ Se on sovelluskuvakkeesi. Jos avaat sovelluksen selaimeen,
 näkyy välilehdessä nimen vieressä valitsemasi pikku kuva.
 
 https://www.pngrepo.com/svg/28744/wallet
-
+----------------------------------------------------------------------
 Tämä luo valitsemastasi kuvasta ikonin, eli oikeasti tekee sen työn.
 Saat valita ikonin ulkoasun esim app storessa jne.
 
@@ -207,8 +215,8 @@ Avaa se visual studio codesta ja kopioi kaikki
 "icons" tyylimääreet sieltä.
 Kopioi theme ja background-color 
 site.webmanifest -> manifest.json:iin.
-
-____________________________________-
+--------------------------------------------------------------------------
+____________________________________
 TEE TÄMÄ OMAPIDOLLE: 
 ------------------------------------------
 Julkaiseminen:
@@ -270,8 +278,45 @@ Näet ruudulla uuden wwww. osoitteen ohjelmallesi.
 Voi mennä ihmettelemään sitä sieltä.
 
 
+VALMIS!
 
+______________________________
+lighthouse-työkalu.
+avaa sovellus 
+katso web dev tools
+sieltä selaa yläpalkista lighthouse esille.
+voit pyörittää ohjelmallesi testin, joka kertoo 
+sovelluksesi toiminnoista.
+performance, accessibility, best practices, SEO ....
 
+_________________________________________________
+react app testing:
+hae reacting sivuilta 
+"create react app" ja sieltä
+"running tests" -osio.
+Sielä on ohjeet.
 
+testaus. powercell:
+
+kansio auki.
+npm test
+--------------------------------------
+kommentointi.
+hyvä kommentoida koodin sekaan.
+kommentointia ei voi lähtökohtaisesti olla liikaa.
+katso:
+react, create react app
+Developing components in isolation.
+--------------------------------------
+EN OLE ASENTANUT: 
+
+npm install react-styleguidist@11.1.5
+npm run styleguide
+jos ei avaudu itsestään. avaa googles:
+http://localhost6060/
+------------------------------------
+react, create react app:
+markdown cheatsheet
+-------------------------------------
 -->
 
